@@ -1,2 +1,4 @@
-
+<lauch>
 <node name="rviz" pkg="rviz" type="rviz" args="-d $(find description)/rviz/robot.rviz" output="screen"/>
+
+</launch>
