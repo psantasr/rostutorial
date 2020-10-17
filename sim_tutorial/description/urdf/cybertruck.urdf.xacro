@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<robot name="file_name" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <link name="base_link"/>
+
+  <!-- Your URDF code here -->
+  <link name="body_link"/>
+
+  <joint name="body_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="body_link"/>
+    <origin xyz="0 0 0 " rpy="0 0 ${pi / 2}"/>
+  </joint>
+</robot>
+
