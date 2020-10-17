@@ -1,4 +1,4 @@
-<launch>
+</launch>
 
     <arg name="use_gui" default="false"/>
     <arg name="world" default="$(find worlds)/willowgarage.world"/>

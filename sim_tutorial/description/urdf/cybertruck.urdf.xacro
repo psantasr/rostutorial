@@ -4,7 +4,14 @@
   <link name="base_link"/>
 
   <!-- Your URDF code here -->
-  <link name="body_link"/>
+  <link name="body_link">
+    <visual>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+               <mesh filename="package://description/urdf/meshes/cybertruck_body.dae"/>
+            </geometry>
+    </visual>
+  </link>
 
   <joint name="body_joint" type="fixed">
     <parent link="base_link"/>
