@@ -1,4 +1,5 @@
 <launch>
+    <arg name="robot_ns" default="/"/>
         <!-- Spawn location -->
     <arg name="x"     default="0"/>
     <arg name="y"     default="0"/>
@@ -7,6 +8,9 @@
     <arg name="pitch" default="0"/>
     <arg name="yaw"   default="0"/>
 
+    <group ns="$(arg robot_ns)">
+    <!-- TF Prefix: since "ns" does not affect TF tree -->
+        <param name="tf_prefix" value="$(arg robot_ns)"/>
     <!--Parse Urdf with xacro -->
         <param name="robot_description" command="xacro '$(find description)/urdf/cybertruck.urdf.xacro'"/>
      <!--Spawn Robot in Gazebo-->
@@ -20,5 +24,6 @@
         <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
         <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
 
+    </group>
 
 </launch>
