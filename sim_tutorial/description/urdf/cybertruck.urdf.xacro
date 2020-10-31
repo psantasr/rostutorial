@@ -1,6 +1,10 @@
 <?xml version="1.0"?>
 <robot name="file_name" xmlns:xacro="http://ros.org/wiki/xacro">
 
+  <!--Includes-->
+  <xacro:include filename="$(find description)/urdf/constants.xacro"/>
+  <xacro:include filename="$(find description)/urdf/inertias.xacro"/>
+
   <link name="base_link"/>
 
   <!-- Your URDF code here -->
@@ -18,6 +22,11 @@
                <mesh filename="package://description/urdf/meshes/cybertruck_body.dae"/>
             </geometry>
     </collision>
+
+    <inertia>
+      <xacro:body_inertial m="${body_mass}" l="${body_length}" w="${body_width}" h="${body_height}"/>
+    </inertia>
+
   </link>
 
   <joint name="body_joint" type="fixed">

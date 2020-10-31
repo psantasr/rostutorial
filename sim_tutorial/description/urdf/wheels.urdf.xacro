@@ -25,7 +25,8 @@
         <joint name="${fb}_${lr}_wheel_joint" type="continuous">
             <parent link="body_link"/>
             <child link="${fb}_${lr}_wheel_link"/>
-            <origin xyz="${left_wheel if lr == 'left' else right_wheel} ${front_wheel if fb == 'front' else back_wheel} ${height_to_wheel} " rpy="0 0 0"/>
+            <origin xyz="${left_wheel if lr == 'left' else right_wheel} ${front_wheel if fb == 'front' else back_wheel} ${height_to_wheel}" rpy="0 0 0"/>
+            <axis xyz="1 0 0"/>
         </joint>
     </xacro:macro>
 
